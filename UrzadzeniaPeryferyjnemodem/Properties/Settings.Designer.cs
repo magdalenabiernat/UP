@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UPModem.Properties
+namespace UrzadzeniaPeryferyjnemodem.Properties
 {
 
 

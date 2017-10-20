@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10703AD3-E799-4D77-8989-E864F7D009CC}</ProjectGuid>
+    <ProjectGuid>{6C7AB2E5-51D7-4889-BE86-7445D6053BB9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UPModem</RootNamespace>
-    <AssemblyName>UPModem</AssemblyName>
+    <RootNamespace>UrzadzeniaPeryferyjnemodem</RootNamespace>
+    <AssemblyName>UrzadzeniaPeryferyjnemodem</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

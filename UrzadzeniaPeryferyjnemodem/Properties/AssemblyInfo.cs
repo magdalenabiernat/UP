@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UPModem")]
+[assembly: AssemblyTitle("UrzadzeniaPeryferyjnemodem")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UPModem")]
+[assembly: AssemblyProduct("UrzadzeniaPeryferyjnemodem")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("10703ad3-e799-4d77-8989-e864f7d009cc")]
+[assembly: Guid("6c7ab2e5-51d7-4889-be86-7445d6053bb9")]
 
 // Version information for an assembly consists of the following four values:
 //
