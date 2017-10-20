@@ -1,0 +1,9 @@
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csprojResolveAssemblyReference.cache
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb
