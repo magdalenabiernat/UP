@@ -25,3 +25,12 @@ C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.Properties
 C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
 C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.exe
 C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.exe.config
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.csprojResolveAssemblyReference.cache
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.Form1.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.Properties.Resources.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
