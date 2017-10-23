@@ -1,6 +1,6 @@
 ﻿namespace UrzadzeniaPeryferyjnemodem
 {
-    partial class Form1
+    partial class FormUP_Modem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,89 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInformation = new System.Windows.Forms.TextBox();
             this.PeripheralLabel = new System.Windows.Forms.Label();
             this.MessageLabel = new System.Windows.Forms.Label();
             this.buttonSend = new System.Windows.Forms.Button();
-            this.buttonDisconnect = new System.Windows.Forms.Button();
-            this.buttonConnect = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonOpen = new System.Windows.Forms.Button();
+            this.comboBoxMessage = new System.Windows.Forms.ComboBox();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.comboBoxSpeed = new System.Windows.Forms.ComboBox();
+            this.labelSpeed = new System.Windows.Forms.Label();
             this.comboBoxPorts = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDissconnect = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textBoxConnect = new System.Windows.Forms.TextBox();
+            this.buttonPickUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxInformation
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 38);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 323);
-            this.textBox1.TabIndex = 1;
+            this.textBoxInformation.Location = new System.Drawing.Point(24, 47);
+            this.textBoxInformation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxInformation.Multiline = true;
+            this.textBoxInformation.Name = "textBoxInformation";
+            this.textBoxInformation.Size = new System.Drawing.Size(271, 397);
+            this.textBoxInformation.TabIndex = 1;
             // 
             // PeripheralLabel
             // 
             this.PeripheralLabel.AutoSize = true;
-            this.PeripheralLabel.Location = new System.Drawing.Point(16, 22);
-            this.PeripheralLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PeripheralLabel.Location = new System.Drawing.Point(21, 27);
             this.PeripheralLabel.Name = "PeripheralLabel";
-            this.PeripheralLabel.Size = new System.Drawing.Size(54, 13);
+            this.PeripheralLabel.Size = new System.Drawing.Size(73, 17);
             this.PeripheralLabel.TabIndex = 2;
             this.PeripheralLabel.Text = "Peripheral";
             // 
             // MessageLabel
             // 
             this.MessageLabel.AutoSize = true;
-            this.MessageLabel.Location = new System.Drawing.Point(502, 41);
-            this.MessageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MessageLabel.Location = new System.Drawing.Point(672, 21);
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(50, 13);
+            this.MessageLabel.Size = new System.Drawing.Size(65, 17);
             this.MessageLabel.TabIndex = 3;
             this.MessageLabel.Text = "Message";
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(494, 105);
-            this.buttonSend.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSend.Location = new System.Drawing.Point(662, 100);
+            this.buttonSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(56, 19);
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 4;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
             this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
-            // buttonDisconnect
+            // buttonClose
             // 
-            this.buttonDisconnect.Location = new System.Drawing.Point(481, 301);
-            this.buttonDisconnect.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDisconnect.Name = "buttonDisconnect";
-            this.buttonDisconnect.Size = new System.Drawing.Size(70, 50);
-            this.buttonDisconnect.TabIndex = 5;
-            this.buttonDisconnect.Text = "Close";
-            this.buttonDisconnect.UseVisualStyleBackColor = true;
-            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
+            this.buttonClose.Location = new System.Drawing.Point(384, 351);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(93, 62);
+            this.buttonClose.TabIndex = 5;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // buttonConnect
+            // buttonOpen
             // 
-            this.buttonConnect.Location = new System.Drawing.Point(401, 301);
-            this.buttonConnect.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(68, 50);
-            this.buttonConnect.TabIndex = 6;
-            this.buttonConnect.Text = "Open";
-            this.buttonConnect.UseVisualStyleBackColor = true;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            this.buttonOpen.Location = new System.Drawing.Point(384, 285);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(91, 62);
+            this.buttonOpen.TabIndex = 6;
+            this.buttonOpen.Text = "Open";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
-            // comboBox2
+            // comboBoxMessage
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxMessage.FormattingEnabled = true;
+            this.comboBoxMessage.Items.AddRange(new object[] {
             "ATA ",
             "ATB",
             "ATB1",
@@ -142,27 +140,27 @@
             "ATX3",
             "ATX4",
             "ATZ0"});
-            this.comboBox2.Location = new System.Drawing.Point(264, 64);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(294, 21);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxMessage.Location = new System.Drawing.Point(355, 50);
+            this.comboBoxMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxMessage.Name = "comboBoxMessage";
+            this.comboBoxMessage.Size = new System.Drawing.Size(391, 24);
+            this.comboBoxMessage.TabIndex = 8;
             // 
-            // button1
+            // buttonStart
             // 
-            this.button1.Location = new System.Drawing.Point(227, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonStart.Location = new System.Drawing.Point(384, 217);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(91, 62);
+            this.buttonStart.TabIndex = 9;
+            this.buttonStart.Text = "Start";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
-            // comboBox1
+            // comboBoxSpeed
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxSpeed.FormattingEnabled = true;
+            this.comboBoxSpeed.Items.AddRange(new object[] {
             "300",
             "600",
             "1200",
@@ -171,87 +169,94 @@
             "9600",
             "19200",
             "38400"});
-            this.comboBox1.Location = new System.Drawing.Point(437, 171);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "9600";
+            this.comboBoxSpeed.Location = new System.Drawing.Point(586, 189);
+            this.comboBoxSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxSpeed.Name = "comboBoxSpeed";
+            this.comboBoxSpeed.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxSpeed.TabIndex = 10;
+            this.comboBoxSpeed.Text = "9600";
             // 
-            // label1
+            // labelSpeed
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(516, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Speed";
+            this.labelSpeed.AutoSize = true;
+            this.labelSpeed.Location = new System.Drawing.Point(691, 166);
+            this.labelSpeed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSpeed.Name = "labelSpeed";
+            this.labelSpeed.Size = new System.Drawing.Size(49, 17);
+            this.labelSpeed.TabIndex = 11;
+            this.labelSpeed.Text = "Speed";
             // 
             // comboBoxPorts
             // 
             this.comboBoxPorts.FormattingEnabled = true;
-            this.comboBoxPorts.Location = new System.Drawing.Point(218, 144);
+            this.comboBoxPorts.Location = new System.Drawing.Point(355, 187);
+            this.comboBoxPorts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxPorts.Name = "comboBoxPorts";
-            this.comboBoxPorts.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPorts.Size = new System.Drawing.Size(160, 24);
             this.comboBoxPorts.TabIndex = 12;
             // 
-            // button2
+            // buttonDissconnect
             // 
-            this.button2.Location = new System.Drawing.Point(481, 260);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Dissconnect";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDissconnect.Location = new System.Drawing.Point(628, 387);
+            this.buttonDissconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDissconnect.Name = "buttonDissconnect";
+            this.buttonDissconnect.Size = new System.Drawing.Size(100, 28);
+            this.buttonDissconnect.TabIndex = 13;
+            this.buttonDissconnect.Text = "Dissconnect";
+            this.buttonDissconnect.UseVisualStyleBackColor = true;
+            this.buttonDissconnect.Click += new System.EventHandler(this.buttonDissconnect_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(401, 260);
+            this.button3.Location = new System.Drawing.Point(628, 351);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 14;
             this.button3.Text = "Connect";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
-            // textBox2
+            // textBoxConnect
             // 
-            this.textBox2.Location = new System.Drawing.Point(428, 234);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 15;
+            this.textBoxConnect.Location = new System.Drawing.Point(614, 285);
+            this.textBoxConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxConnect.Name = "textBoxConnect";
+            this.textBoxConnect.Size = new System.Drawing.Size(132, 22);
+            this.textBoxConnect.TabIndex = 15;
             // 
-            // button4
+            // buttonPickUp
             // 
-            this.button4.Location = new System.Drawing.Point(320, 260);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Pick up";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonPickUp.Location = new System.Drawing.Point(628, 315);
+            this.buttonPickUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPickUp.Name = "buttonPickUp";
+            this.buttonPickUp.Size = new System.Drawing.Size(100, 28);
+            this.buttonPickUp.TabIndex = 16;
+            this.buttonPickUp.Text = "Pick up";
+            this.buttonPickUp.UseVisualStyleBackColor = true;
+            this.buttonPickUp.Click += new System.EventHandler(this.buttonPickUp_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 370);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(755, 455);
+            this.Controls.Add(this.buttonPickUp);
+            this.Controls.Add(this.textBoxConnect);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonDissconnect);
             this.Controls.Add(this.comboBoxPorts);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.buttonConnect);
-            this.Controls.Add(this.buttonDisconnect);
+            this.Controls.Add(this.labelSpeed);
+            this.Controls.Add(this.comboBoxSpeed);
+            this.Controls.Add(this.buttonStart);
+            this.Controls.Add(this.comboBoxMessage);
+            this.Controls.Add(this.buttonOpen);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.MessageLabel);
             this.Controls.Add(this.PeripheralLabel);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.textBoxInformation);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "UP";
             this.ResumeLayout(false);
@@ -260,21 +265,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInformation;
         private System.Windows.Forms.Label PeripheralLabel;
         private System.Windows.Forms.Label MessageLabel;
         private System.Windows.Forms.Button buttonSend;
-        private System.Windows.Forms.Button buttonDisconnect;
-        private System.Windows.Forms.Button buttonConnect;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonOpen;
+        private System.Windows.Forms.ComboBox comboBoxMessage;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.ComboBox comboBoxSpeed;
+        private System.Windows.Forms.Label labelSpeed;
         private System.Windows.Forms.ComboBox comboBoxPorts;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDissconnect;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBoxConnect;
+        private System.Windows.Forms.Button buttonPickUp;
     }
 }
 

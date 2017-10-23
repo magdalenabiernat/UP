@@ -11,16 +11,15 @@ using System.IO.Ports;
 
 namespace UrzadzeniaPeryferyjnemodem
 {
-    public partial class Form1 : Form
+    public partial class FormUP_Modem : Form
     {
         SerialPort serialport;
-        string receivedData;
         delegate void A();
         A  delegat;
         int speed=9600;
        
 
-        public Form1()
+        public FormUP_Modem()
         {
             InitializeComponent();
         }
@@ -28,11 +27,11 @@ namespace UrzadzeniaPeryferyjnemodem
         
         private void WpiszOdebrane()
         {
-            textBox1.Text+=serialport.ReadByte().ToString("X") + " ";
+            textBoxInformation.Text+=serialport.ReadByte().ToString("X") + " ";
         }
         private void DataRecievedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-            textBox1.Invoke(delegat);
+            textBoxInformation.Invoke(delegat);
         }
         private void buttonSend_Click(object sender, EventArgs e) 
         {
@@ -40,11 +39,11 @@ namespace UrzadzeniaPeryferyjnemodem
             {
                 try
                 {
-                    serialport.Write(comboBox2.Text + System.Environment.NewLine);
-                    textBox1.Text += comboBox2.Text + System.Environment.NewLine;
+                    serialport.Write(comboBoxMessage.Text + System.Environment.NewLine);
+                    textBoxInformation.Text += comboBoxMessage.Text + System.Environment.NewLine;
                 }catch(Exception ex)
                 {
-                    textBox1.Text += " Error!"+ex.Message + System.Environment.NewLine;
+                    textBoxInformation.Text += " Error!"+ex.Message + System.Environment.NewLine;
                 }
                 serialport.DataReceived += new SerialDataReceivedEventHandler(DataRecievedHandler);
                 delegat = new A(WpiszOdebrane);
@@ -52,18 +51,16 @@ namespace UrzadzeniaPeryferyjnemodem
         }
 
        
-        private void buttonConnect_Click(object sender, EventArgs e)
+        private void buttonOpen_Click(object sender, EventArgs e)
         {
-
-
-            try
+                       try
             {
 
-                if (serialport.IsOpen==false)
+                if (serialport.IsOpen == false)
                 {
                     serialport.PortName = comboBoxPorts.SelectedItem.ToString();
                     serialport.Open();
-                    textBox1.Text += " Connection open!" + System.Environment.NewLine;
+                    textBoxInformation.Text += " Connection open!" + System.Environment.NewLine;
                 }
             }
 
@@ -78,7 +75,7 @@ namespace UrzadzeniaPeryferyjnemodem
     */
             catch (Exception exception)
             {
-                textBox1.Text += "Error !" + exception.Message + System.Environment.NewLine;
+                textBoxInformation.Text += "Error !" + exception.Message + System.Environment.NewLine;
             }
 
             
@@ -93,23 +90,20 @@ namespace UrzadzeniaPeryferyjnemodem
                 BeginInvoke(new A((string text)=> { textBox1.Text += text; }), new object[] { receivedData }); 
             }
         }*/
-        private void buttonDisconnect_Click(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)
         {
             if (serialport.IsOpen)
             {
                 serialport.Close();
-                textBox1.Text += "Connection close !" + System.Environment.NewLine;
+                textBoxInformation.Text += "Connection close !" + System.Environment.NewLine;
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-        }
+    
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
-            speed = Int32.Parse(comboBox1.SelectedItem.ToString());
+            speed = Int32.Parse(comboBoxSpeed.SelectedItem.ToString());
             serialport = new SerialPort(" ", speed, Parity.None, 8, StopBits.One);//TODO: nazwa portu,szybkosc transmisji, bit parzystoci,bity danych, bit zatrzymania
 
             String[] ports = SerialPort.GetPortNames();
@@ -117,17 +111,33 @@ namespace UrzadzeniaPeryferyjnemodem
                 comboBoxPorts.Items.Add(x);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonConnect_Click(object sender, EventArgs e)
         {
-            serialport.Write("ATD "+textBox2.Text + System.Environment.NewLine);
+
+            // to jest przekopiowane z kliknięcia Send i zmieniona pierwsza linia w try
+            if (serialport.IsOpen)
+            {
+                try
+                {
+                    serialport.Write("ATD " + textBoxConnect.Text + System.Environment.NewLine);
+                    //textBoxInformation.Text += comboBoxMessage.Text + System.Environment.NewLine;
+                }
+                catch (Exception ex)
+                {
+                    textBoxInformation.Text += " Error!" + ex.Message + System.Environment.NewLine;
+                }
+                serialport.DataReceived += new SerialDataReceivedEventHandler(DataRecievedHandler);
+                delegat = new A(WpiszOdebrane);
+            }
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonPickUp_Click(object sender, EventArgs e)
         {
             serialport.Write("ATA" + System.Environment.NewLine);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDissconnect_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 3; i++)
             {
