@@ -1,0 +1,36 @@
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csprojResolveAssemblyReference.cache
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+c:\users\m-mic\documents\visual studio 2017\Projects\UrzadzeniaPeryferyjnemodem\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csprojResolveAssemblyReference.cache
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csprojResolveAssemblyReference.cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csprojResolveAssemblyReference.cache
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+C:\Users\lab\Desktop\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache

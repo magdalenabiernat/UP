@@ -1,0 +1,36 @@
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\bin\Debug\UPModem.exe.config
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\bin\Debug\UPModem.exe
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\bin\Debug\UPModem.pdb
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.csprojResolveAssemblyReference.cache
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.Form1.resources
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.Properties.Resources.resources
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.exe
+c:\users\seblag-laptop\documents\visual studio 2017\Projects\UPModem\UPModem\obj\Debug\UPModem.pdb
+C:\Users\lab\Desktop\UPModem\UPModem\bin\Debug\UPModem.exe.config
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.exe
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.pdb
+C:\Users\lab\Desktop\UPModem\UPModem\bin\Debug\UPModem.exe
+C:\Users\lab\Desktop\UPModem\UPModem\bin\Debug\UPModem.pdb
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.csprojResolveAssemblyReference.cache
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.Form1.resources
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.Properties.Resources.resources
+C:\Users\lab\Desktop\UPModem\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\bin\Debug\UPModem.exe.config
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\bin\Debug\UPModem.exe
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\bin\Debug\UPModem.pdb
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.csprojResolveAssemblyReference.cache
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.Form1.resources
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.Properties.Resources.resources
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.exe
+C:\Users\seblag-stacjonarny\Desktop\UPModem\UPModem\obj\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.exe.config
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\bin\Debug\UPModem.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.csprojResolveAssemblyReference.cache
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.Form1.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.Properties.Resources.resources
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UPModem\obj\Debug\UPModem.csproj.GenerateResource.Cache
