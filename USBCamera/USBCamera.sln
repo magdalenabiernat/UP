@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBCamera", "USBCamera\USBCamera.csproj", "{637052A3-467C-43B7-91E0-49F8B4B50882}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{637052A3-467C-43B7-91E0-49F8B4B50882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{637052A3-467C-43B7-91E0-49F8B4B50882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{637052A3-467C-43B7-91E0-49F8B4B50882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{637052A3-467C-43B7-91E0-49F8B4B50882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
