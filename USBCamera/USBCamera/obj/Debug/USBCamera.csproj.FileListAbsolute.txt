@@ -92,3 +92,7 @@ C:\Users\m-mic\Documents\Visual Studio 2017\Projects\USBCamera\USBCamera\obj\Deb
 C:\Users\m-mic\Documents\Visual Studio 2017\Projects\USBCamera\USBCamera\obj\Debug\USBCamera.csproj.GenerateResource.Cache
 C:\Users\m-mic\Documents\Visual Studio 2017\Projects\USBCamera\USBCamera\obj\Debug\USBCamera.exe
 C:\Users\m-mic\Documents\Visual Studio 2017\Projects\USBCamera\USBCamera\obj\Debug\USBCamera.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo_UP\USBCamera\USBCamera\bin\Debug\USBCamera.exe.config
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo_UP\USBCamera\USBCamera\obj\Debug\USBCamera.exe
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo_UP\USBCamera\USBCamera\obj\Debug\USBCamera.pdb
+C:\Users\magda\Desktop\Madzia\PWr\UP\repo_UP\USBCamera\USBCamera\obj\Debug\USBCamera.csprojResolveAssemblyReference.cache
