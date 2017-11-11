@@ -11,7 +11,6 @@ using AForge.Video;
 using Accord.Video.FFMPEG;
 using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
-
 namespace cw12___Biernat_Bojzan
 {
     //aberacja sferyczna
@@ -72,6 +71,7 @@ namespace cw12___Biernat_Bojzan
                 {
                     string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
                     obrazekLewy.Image.Save(sciezka, ImageFormat.Jpeg);
+                    
                 }
                 if (camera2.IsRunning)
                 {
@@ -123,5 +123,120 @@ namespace cw12___Biernat_Bojzan
                 obrazekLewy.Image = null;
             }
         }
+
+        private void buttonAnaglif_Click(object sender, EventArgs e)
+        {
+            
+            button4_Click( sender,e);
+
+
+
+        }
     }
+    public class Transtp1
+    {
+        private Bitmap obrazek;
+        private Bitmap obrazekKopia;
+
+        public Transtp1(Bitmap img)
+        {
+            this.obrazekKopia = this.obrazek = img;
+        }
+        public Bitmap Transformacja()
+        {
+            if (obrazekKopia.PixelFormat != PixelFormat.Format8bppIndexed && obrazekKopia.PixelFormat != PixelFormat.Format24bppRgb)
+            {
+                Bitmap bmp = new Bitmap(obrazekKopia.Width, obrazekKopia.Height, PixelFormat.Format24bppRgb);
+                Graphics g = Graphics.FromImage(bmp);
+                g.DrawImage(obrazekKopia, 0, 0, obrazekKopia.Width, obrazekKopia.Height);
+                g.Dispose();
+                obrazekKopia = bmp;
+                obrazek = bmp;
+            }
+            PixelFormat formatObrazka = (obrazek.PixelFormat == PixelFormat.Format8bppIndexed) ? PixelFormat.Format8bppIndexed : PixelFormat.Format24bppRgb;
+            BitmapData daneWyjsciowe = obrazekKopia.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadWrite, formatObrazka);
+
+            BitmapData daneWejsciowe = obrazek.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadOnly, formatObrazka);
+            unsafe
+            {
+                byte* wskWyjsciowy = (byte*)daneWyjsciowe.Scan0;
+                byte* wskWejsciowy = (byte*)daneWejsciowe.Scan0;
+
+                int nOffset = daneWejsciowe.Stride - obrazek.Width * 3;
+                for (int y = 0; y < obrazek.Height; y++)
+                {
+                    for (int x = 0; x < obrazek.Width * 3; x++)
+                    {
+                        wskWyjsciowy[0] = (byte)(0.299 * wskWyjsciowy[0] + 0.587 * wskWyjsciowy[1] + 0.114 * wskWyjsciowy[2]);
+                        wskWyjsciowy[1] = 0;
+                        wskWyjsciowy[2] = 0;
+
+                        wskWejsciowy += 3; wskWyjsciowy += 3;
+                    }
+                    wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
+                }
+                wskWejsciowy += nOffset; wskWyjsciowy += nOffset; 
+            }
+            obrazek.UnlockBits(daneWejsciowe);
+            obrazekKopia.UnlockBits(daneWyjsciowe);
+
+            return obrazekKopia;
+        }
+        public class Transtp2
+        {
+            private Bitmap obrazek;
+            private Bitmap obrazekKopia;
+
+            public Transtp2(Bitmap img)
+            {
+                this.obrazekKopia = this.obrazek = img;
+            }
+            public Bitmap Transformacja1()
+            {
+                if (obrazekKopia.PixelFormat != PixelFormat.Format8bppIndexed && obrazekKopia.PixelFormat != PixelFormat.Format24bppRgb)
+                {
+                    Bitmap bmp = new Bitmap(obrazekKopia.Width, obrazekKopia.Height, PixelFormat.Format24bppRgb);
+                    Graphics g = Graphics.FromImage(bmp);
+                    g.DrawImage(obrazekKopia, 0, 0, obrazekKopia.Width, obrazekKopia.Height);
+                    g.Dispose();
+                    obrazekKopia = bmp;
+                    obrazek = bmp;
+                }
+                PixelFormat formatObrazka = (obrazek.PixelFormat == PixelFormat.Format8bppIndexed) ? PixelFormat.Format8bppIndexed : PixelFormat.Format24bppRgb;
+                BitmapData daneWyjsciowe = obrazekKopia.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadWrite, formatObrazka);
+
+                BitmapData daneWejsciowe = obrazek.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadOnly, formatObrazka);
+                unsafe
+                {
+                    byte* wskWyjsciowy = (byte*)daneWyjsciowe.Scan0;
+                    byte* wskWejsciowy = (byte*)daneWejsciowe.Scan0;
+
+                    int nOffset = daneWejsciowe.Stride - obrazek.Width * 3;
+                    for (int y = 0; y < obrazek.Height; y++)
+                    {
+                        for (int x = 0; x < obrazek.Width * 3; x++)
+                        {
+                            wskWyjsciowy[0] = 0;
+                            wskWyjsciowy[1] = (byte)(0.299 * wskWyjsciowy[0] + 0.587 * wskWyjsciowy[1] + 0.114 * wskWyjsciowy[2]);
+                            wskWyjsciowy[2] = (byte)(0.299 * wskWyjsciowy[0] + 0.587 * wskWyjsciowy[1] + 0.114 * wskWyjsciowy[2]);
+
+                            wskWejsciowy += 3; wskWyjsciowy += 3;
+                        }
+                        wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
+                    }
+                    wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
+                }
+                obrazek.UnlockBits(daneWejsciowe);
+                obrazekKopia.UnlockBits(daneWyjsciowe);
+
+                return obrazekKopia;
+            }
+            public class Transtp3
+            {
+                private Bitmap obrazek;
+                private Bitmap obrazekKopia;
+
+                
+            }
+
 }

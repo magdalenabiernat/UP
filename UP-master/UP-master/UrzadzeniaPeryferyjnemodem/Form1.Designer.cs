@@ -149,7 +149,7 @@
             // buttonStart
             // 
             this.buttonStart.Location = new System.Drawing.Point(384, 217);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(91, 62);
             this.buttonStart.TabIndex = 9;
@@ -170,7 +170,7 @@
             "19200",
             "38400"});
             this.comboBoxSpeed.Location = new System.Drawing.Point(586, 189);
-            this.comboBoxSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSpeed.Name = "comboBoxSpeed";
             this.comboBoxSpeed.Size = new System.Drawing.Size(160, 24);
             this.comboBoxSpeed.TabIndex = 10;
@@ -190,7 +190,7 @@
             // 
             this.comboBoxPorts.FormattingEnabled = true;
             this.comboBoxPorts.Location = new System.Drawing.Point(355, 187);
-            this.comboBoxPorts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPorts.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPorts.Name = "comboBoxPorts";
             this.comboBoxPorts.Size = new System.Drawing.Size(160, 24);
             this.comboBoxPorts.TabIndex = 12;
@@ -198,7 +198,7 @@
             // buttonDissconnect
             // 
             this.buttonDissconnect.Location = new System.Drawing.Point(628, 387);
-            this.buttonDissconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDissconnect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDissconnect.Name = "buttonDissconnect";
             this.buttonDissconnect.Size = new System.Drawing.Size(100, 28);
             this.buttonDissconnect.TabIndex = 13;
@@ -209,7 +209,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(628, 351);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 14;
@@ -220,15 +220,16 @@
             // textBoxConnect
             // 
             this.textBoxConnect.Location = new System.Drawing.Point(614, 285);
-            this.textBoxConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxConnect.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxConnect.Name = "textBoxConnect";
             this.textBoxConnect.Size = new System.Drawing.Size(132, 22);
             this.textBoxConnect.TabIndex = 15;
+            this.textBoxConnect.TextChanged += new System.EventHandler(this.textBoxConnect_TextChanged);
             // 
             // buttonPickUp
             // 
             this.buttonPickUp.Location = new System.Drawing.Point(628, 315);
-            this.buttonPickUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPickUp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPickUp.Name = "buttonPickUp";
             this.buttonPickUp.Size = new System.Drawing.Size(100, 28);
             this.buttonPickUp.TabIndex = 16;
@@ -236,7 +237,7 @@
             this.buttonPickUp.UseVisualStyleBackColor = true;
             this.buttonPickUp.Click += new System.EventHandler(this.buttonPickUp_Click);
             // 
-            // Form1
+            // FormUP_Modem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,7 +258,7 @@
             this.Controls.Add(this.PeripheralLabel);
             this.Controls.Add(this.textBoxInformation);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "FormUP_Modem";
             this.Text = "UP";
             this.ResumeLayout(false);
             this.PerformLayout();

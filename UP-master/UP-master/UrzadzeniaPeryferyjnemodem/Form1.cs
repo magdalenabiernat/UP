@@ -146,5 +146,10 @@ namespace UrzadzeniaPeryferyjnemodem
             }
             System.Threading.Thread.Sleep(1000);
         }
+
+        private void textBoxConnect_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

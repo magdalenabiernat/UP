@@ -41,6 +41,7 @@
             this.zapisz = new System.Windows.Forms.Button();
             this.wyłączGórne = new System.Windows.Forms.Button();
             this.włączGórne = new System.Windows.Forms.Button();
+            this.buttonAnaglif = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.obrazekLewy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrazekPrawy)).BeginInit();
             this.SuspendLayout();
@@ -174,11 +175,23 @@
             this.włączGórne.UseVisualStyleBackColor = true;
             this.włączGórne.Click += new System.EventHandler(this.włączGórne_Click);
             // 
+            // buttonAnaglif
+            // 
+            this.buttonAnaglif.Location = new System.Drawing.Point(751, 574);
+            this.buttonAnaglif.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAnaglif.Name = "buttonAnaglif";
+            this.buttonAnaglif.Size = new System.Drawing.Size(100, 28);
+            this.buttonAnaglif.TabIndex = 13;
+            this.buttonAnaglif.Text = "Anaglif";
+            this.buttonAnaglif.UseVisualStyleBackColor = true;
+            this.buttonAnaglif.Click += new System.EventHandler(this.buttonAnaglif_Click);
+            // 
             // obsługaKameryUSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 661);
+            this.Controls.Add(this.buttonAnaglif);
             this.Controls.Add(this.wyłączGórne);
             this.Controls.Add(this.włączGórne);
             this.Controls.Add(this.zapisz);
@@ -218,6 +231,7 @@
         private System.Windows.Forms.Button zapisz;
         private System.Windows.Forms.Button wyłączGórne;
         private System.Windows.Forms.Button włączGórne;
+        private System.Windows.Forms.Button buttonAnaglif;
     }
 }
 
