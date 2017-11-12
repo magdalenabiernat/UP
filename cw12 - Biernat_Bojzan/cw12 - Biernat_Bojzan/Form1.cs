@@ -129,10 +129,11 @@ namespace cw12___Biernat_Bojzan
 
         private void buttonAnaglif_Click(object sender, EventArgs e)
         {
-
+            Image im = new Bitmap(obrazekLewy.Image);
+            Image im2 = new Bitmap(obrazekPrawy.Image);
             button4_Click(sender, e);
-            obraz = new Transtp1(obrazekLewy.DrawToBitmap());
-            obraz2 = new Transtp2(obrazekPrawy.DrawToBitmap());
+            obraz = new Transtp1((Bitmap)im);
+            obraz2 = new Transtp2((Bitmap)im2);
 
             obraz3 = new Transtp3(obraz.Transformacja(), obraz2.Transformacja1());
             string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
