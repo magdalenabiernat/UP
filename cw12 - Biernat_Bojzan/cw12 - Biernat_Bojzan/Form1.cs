@@ -269,9 +269,9 @@ namespace cw12___Biernat_Bojzan
                 g.Dispose();
                 obrazekKopia = bmp;
                 Bitmap bmp1 = new Bitmap(obrazek.Width, obrazek.Height, PixelFormat.Format24bppRgb);
-                Graphics g = Graphics.FromImage(bmp);
-                g.DrawImage(obrazek, 0, 0, obrazek.Width, obrazek.Height);
-                g.Dispose();
+                Graphics g1 = Graphics.FromImage(bmp);
+                g1.DrawImage(obrazek, 0, 0, obrazek.Width, obrazek.Height);
+                g1.Dispose();
                 obrazek = bmp1;
                 obraz3D = bmp1;
             }
