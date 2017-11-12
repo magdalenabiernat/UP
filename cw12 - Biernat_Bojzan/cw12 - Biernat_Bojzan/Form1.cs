@@ -17,6 +17,9 @@ namespace cw12___Biernat_Bojzan
     //synchrnizacja klatek
     public partial class obsługaKameryUSB : Form
     {
+        private Transtp1 obraz;
+        private Transtp2 obraz2;
+        private Transtp3 obraz3;
         private FilterInfoCollection usbCamera;
         private FilterInfoCollection usbCamera2;
         private VideoCaptureDevice camera1;
@@ -29,13 +32,13 @@ namespace cw12___Biernat_Bojzan
             InitializeComponent();
         }
 
-          private void cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap pictureBoxBitmap = (Bitmap)eventArgs.Frame.Clone();
             Bitmap movieFileBitmap = (Bitmap)eventArgs.Frame.Clone();
             obrazekLewy.Image = pictureBoxBitmap;
 
-         //   throw new NotImplementedException();
+            //   throw new NotImplementedException();
         }
         private void cam_NewFrame2(object sender, NewFrameEventArgs eventArgs)
         {
@@ -65,13 +68,13 @@ namespace cw12___Biernat_Bojzan
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(camera1.IsRunning&&camera2.IsRunning&nazwaDoZapisuZdjecia.Text!="")
+            if (camera1.IsRunning && camera2.IsRunning & nazwaDoZapisuZdjecia.Text != "")
             {
                 if (camera1.IsRunning)
                 {
                     string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
                     obrazekLewy.Image.Save(sciezka, ImageFormat.Jpeg);
-                    
+
                 }
                 if (camera2.IsRunning)
                 {
@@ -126,10 +129,14 @@ namespace cw12___Biernat_Bojzan
 
         private void buttonAnaglif_Click(object sender, EventArgs e)
         {
-            
-            button4_Click( sender,e);
 
+            button4_Click(sender, e);
+            obraz = new Transtp1(obrazekLewy.DrawToBitmap());
+            obraz2 = new Transtp2(obrazekPrawy.DrawToBitmap());
 
+            obraz3 = new Transtp3(obraz.Transformacja(), obraz2.Transformacja1());
+            string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
+            obraz3.Transformacja().Save(sciezka, ImageFormat.Jpeg);
 
         }
     }
@@ -175,13 +182,13 @@ namespace cw12___Biernat_Bojzan
                     }
                     wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
                 }
-                wskWejsciowy += nOffset; wskWyjsciowy += nOffset; 
+                wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
             }
             obrazek.UnlockBits(daneWejsciowe);
             obrazekKopia.UnlockBits(daneWyjsciowe);
 
             return obrazekKopia;
-        }
+        } }
         public class Transtp2
         {
             private Bitmap obrazek;
@@ -236,7 +243,69 @@ namespace cw12___Biernat_Bojzan
                 private Bitmap obrazek;
                 private Bitmap obrazekKopia;
 
-                
+
             }
 
+        }
+    public class Transtp3
+    {
+        private Bitmap obrazek;
+        private Bitmap obrazekKopia;
+        private Bitmap obraz3D;
+
+        public Transtp3(Bitmap img,Bitmap img1)
+        {
+            this.obrazekKopia  = img;
+            this.obrazek = img1;
+        }
+        public Bitmap Transformacja()
+        {
+            if (obrazekKopia.PixelFormat != PixelFormat.Format8bppIndexed && obrazekKopia.PixelFormat != PixelFormat.Format24bppRgb && obrazek.PixelFormat != PixelFormat.Format24bppRgb && obrazek.PixelFormat != PixelFormat.Format8bppIndexed) 
+            {
+                Bitmap bmp = new Bitmap(obrazekKopia.Width, obrazekKopia.Height, PixelFormat.Format24bppRgb);
+                Graphics g = Graphics.FromImage(bmp);
+                g.DrawImage(obrazekKopia, 0, 0, obrazekKopia.Width, obrazekKopia.Height);
+                g.Dispose();
+                obrazekKopia = bmp;
+                Bitmap bmp1 = new Bitmap(obrazek.Width, obrazek.Height, PixelFormat.Format24bppRgb);
+                Graphics g = Graphics.FromImage(bmp);
+                g.DrawImage(obrazek, 0, 0, obrazek.Width, obrazek.Height);
+                g.Dispose();
+                obrazek = bmp1;
+                obraz3D = bmp1;
+            }
+            PixelFormat formatObrazka = (obrazek.PixelFormat == PixelFormat.Format8bppIndexed) ? PixelFormat.Format8bppIndexed : PixelFormat.Format24bppRgb;
+            PixelFormat formatObrazka1 = (obrazekKopia.PixelFormat == PixelFormat.Format8bppIndexed) ? PixelFormat.Format8bppIndexed : PixelFormat.Format24bppRgb;
+            BitmapData daneWyjsciowe = obrazekKopia.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadWrite, formatObrazka);
+            BitmapData daneWyjsciowe1 = obrazek.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadWrite, formatObrazka);
+            BitmapData daneWejsciowe = obrazek.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadOnly, formatObrazka);
+            BitmapData daneWejsciowe1 = obrazekKopia.LockBits(new Rectangle(0, 0, obrazek.Width, obrazek.Height), ImageLockMode.ReadOnly, formatObrazka);
+            unsafe
+            {
+                byte* wskWyjsciowy = (byte*)daneWyjsciowe.Scan0;
+                byte* wskWejsciowy = (byte*)daneWejsciowe.Scan0;
+                byte* wskWyjsciowy1 = (byte*)daneWyjsciowe1.Scan0;
+                byte* wskWejsciowy1 = (byte*)daneWejsciowe1.Scan0;
+
+                int nOffset = daneWejsciowe.Stride - obrazek.Width * 3;
+                for (int y = 0; y < obrazek.Height; y++)
+                {
+                    for (int x = 0; x < obrazek.Width * 3; x++)
+                    {
+                        wskWyjsciowy[0] = (byte)(0.299 * wskWyjsciowy[0] + 0.587 * wskWyjsciowy[1] + 0.114 * wskWyjsciowy[2]);
+                        wskWyjsciowy[1] = (byte)(0.299 * wskWyjsciowy1[0] + 0.587 * wskWyjsciowy1[1] + 0.114 * wskWyjsciowy1[2]); ;
+                        wskWyjsciowy[2] = (byte)(0.299 * wskWyjsciowy1[0] + 0.587 * wskWyjsciowy1[1] + 0.114 * wskWyjsciowy1[2]); ;
+
+                        wskWejsciowy += 3; wskWyjsciowy += 3;
+                    }
+                    wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
+                }
+                wskWejsciowy += nOffset; wskWyjsciowy += nOffset;
+            }
+            obrazek.UnlockBits(daneWejsciowe);
+            obrazekKopia.UnlockBits(daneWyjsciowe);
+
+            return obrazekKopia;
+        }
+    }
 }
