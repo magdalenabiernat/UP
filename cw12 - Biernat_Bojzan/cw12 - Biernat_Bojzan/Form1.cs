@@ -66,7 +66,24 @@ namespace cw12___Biernat_Bojzan
             camera2 = new VideoCaptureDevice();
         }
 
-    
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (camera1.IsRunning && camera2.IsRunning & nazwaDoZapisuZdjecia.Text != "")
+            {
+                if (camera1.IsRunning)
+                {
+                    string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
+                    obrazekLewy.Image.Save(sciezka, ImageFormat.Jpeg);
+
+                }
+                if (camera2.IsRunning)
+                {
+                    string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + "1.jpg";
+                    obrazekPrawy.Image.Save(sciezka, ImageFormat.Jpeg);
+                }
+            }
+
+        }
 
         private void włączGórne_Click(object sender, EventArgs e)
         {
@@ -114,7 +131,7 @@ namespace cw12___Biernat_Bojzan
         {
             Image im = new Bitmap(obrazekLewy.Image);
             Image im2 = new Bitmap(obrazekPrawy.Image);
-            buttonZapisz_Click(sender, e);
+            button4_Click(sender, e);
             obraz = new Transtp1((Bitmap)im);
             obraz2 = new Transtp2((Bitmap)im2);
 
@@ -122,24 +139,6 @@ namespace cw12___Biernat_Bojzan
             string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
             obraz3.Transformacja().Save(sciezka, ImageFormat.Jpeg);
 
-        }
-
-        private void buttonZapisz_Click(object sender, EventArgs e)
-        {
-            if (camera1.IsRunning && camera2.IsRunning & nazwaDoZapisuZdjecia.Text != "")
-            {
-                if (camera1.IsRunning)
-                {
-                    string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + ".jpg";
-                    obrazekLewy.Image.Save(sciezka, ImageFormat.Jpeg);
-
-                }
-                if (camera2.IsRunning)
-                {
-                    string sciezka = @"C:\Users\lab\Videos\" + nazwaDoZapisuZdjecia.Text + "1.jpg";
-                    obrazekPrawy.Image.Save(sciezka, ImageFormat.Jpeg);
-                }
-            }
         }
     }
     public class Transtp1

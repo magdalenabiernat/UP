@@ -38,7 +38,7 @@
             this.przegladarka = new System.Windows.Forms.Button();
             this.nazwaDoZapisuZdjecia = new System.Windows.Forms.TextBox();
             this.napisZapiszZdjęcie = new System.Windows.Forms.Label();
-            this.buttonZapisz = new System.Windows.Forms.Button();
+            this.zapisz = new System.Windows.Forms.Button();
             this.wyłączGórne = new System.Windows.Forms.Button();
             this.włączGórne = new System.Windows.Forms.Button();
             this.buttonAnaglif = new System.Windows.Forms.Button();
@@ -142,16 +142,16 @@
             this.napisZapiszZdjęcie.TabIndex = 9;
             this.napisZapiszZdjęcie.Text = "zapisz zdjęcie";
             // 
-            // buttonZapisz
+            // zapisz
             // 
-            this.buttonZapisz.Location = new System.Drawing.Point(599, 606);
-            this.buttonZapisz.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonZapisz.Name = "buttonZapisz";
-            this.buttonZapisz.Size = new System.Drawing.Size(100, 28);
-            this.buttonZapisz.TabIndex = 10;
-            this.buttonZapisz.Text = "zapisz";
-            this.buttonZapisz.UseVisualStyleBackColor = true;
-            this.buttonZapisz.Click += new System.EventHandler(this.buttonZapisz_Click);
+            this.zapisz.Location = new System.Drawing.Point(599, 606);
+            this.zapisz.Margin = new System.Windows.Forms.Padding(4);
+            this.zapisz.Name = "zapisz";
+            this.zapisz.Size = new System.Drawing.Size(100, 28);
+            this.zapisz.TabIndex = 10;
+            this.zapisz.Text = "zapisz";
+            this.zapisz.UseVisualStyleBackColor = true;
+            this.zapisz.Click += new System.EventHandler(this.button4_Click);
             // 
             // wyłączGórne
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.buttonAnaglif);
             this.Controls.Add(this.wyłączGórne);
             this.Controls.Add(this.włączGórne);
-            this.Controls.Add(this.buttonZapisz);
+            this.Controls.Add(this.zapisz);
             this.Controls.Add(this.napisZapiszZdjęcie);
             this.Controls.Add(this.nazwaDoZapisuZdjecia);
             this.Controls.Add(this.przegladarka);
@@ -228,7 +228,7 @@
         private System.Windows.Forms.Button przegladarka;
         private System.Windows.Forms.TextBox nazwaDoZapisuZdjecia;
         private System.Windows.Forms.Label napisZapiszZdjęcie;
-        private System.Windows.Forms.Button buttonZapisz;
+        private System.Windows.Forms.Button zapisz;
         private System.Windows.Forms.Button wyłączGórne;
         private System.Windows.Forms.Button włączGórne;
         private System.Windows.Forms.Button buttonAnaglif;
