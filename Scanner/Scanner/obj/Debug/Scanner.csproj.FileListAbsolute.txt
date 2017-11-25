@@ -1,0 +1,27 @@
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\bin\Debug\Scanner.exe.config
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\bin\Debug\Scanner.exe
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\bin\Debug\Scanner.pdb
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.csprojResolveAssemblyReference.cache
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.Form1.resources
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.Properties.Resources.resources
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.csproj.GenerateResource.Cache
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.exe
+c:\users\seblag-stacjonarny\documents\visual studio 2017\Projects\Scanner\Scanner\obj\Debug\Scanner.pdb
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\bin\Debug\Scanner.exe.config
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\bin\Debug\Scanner.exe
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\bin\Debug\Scanner.pdb
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.csprojResolveAssemblyReference.cache
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.Form1.resources
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.Properties.Resources.resources
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.csproj.GenerateResource.Cache
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.exe
+C:\Users\seblag-laptop\Desktop\Scanner\Scanner\obj\Debug\Scanner.pdb
+C:\Users\lab\Desktop\Scanner\Scanner\bin\Debug\Scanner.exe.config
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.exe
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.pdb
+C:\Users\lab\Desktop\Scanner\Scanner\bin\Debug\Scanner.exe
+C:\Users\lab\Desktop\Scanner\Scanner\bin\Debug\Scanner.pdb
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.csprojResolveAssemblyReference.cache
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.Form1.resources
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.Properties.Resources.resources
+C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.csproj.GenerateResource.Cache
