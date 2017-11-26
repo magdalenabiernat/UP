@@ -25,3 +25,9 @@ C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.csprojResolveAssemblyRefe
 C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.Form1.resources
 C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.Properties.Resources.resources
 C:\Users\lab\Desktop\Scanner\Scanner\obj\Debug\Scanner.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.csprojResolveAssemblyReference.cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.obsługaKameryUSB.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.Properties.Resources.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.exe
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\Scanner\Scanner\obj\Debug\Scanner.pdb

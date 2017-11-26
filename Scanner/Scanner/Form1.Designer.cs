@@ -1,6 +1,6 @@
 ﻿namespace Scanner
 {
-    partial class Form1
+    partial class obsługaKameryUSB
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.obrazekLewy = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrazekLewy)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -50,7 +52,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Skanuj";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -60,7 +61,6 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Zapisz";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // radioButton1
             // 
@@ -88,21 +88,21 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(10, 184);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(10, 236);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(10, 288);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 6;
             // 
             // pictureBox1
@@ -141,28 +141,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Jasność:";
             // 
-            // Form1
+            // obrazekLewy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 799);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.obrazekLewy.Location = new System.Drawing.Point(156, 107);
+            this.obrazekLewy.Name = "obrazekLewy";
+            this.obrazekLewy.Size = new System.Drawing.Size(100, 50);
+            this.obrazekLewy.TabIndex = 0;
+            this.obrazekLewy.TabStop = false;
+            // 
+            // obsługaKameryUSB
+            // 
+            this.ClientSize = new System.Drawing.Size(649, 451);
+            this.Controls.Add(this.obrazekLewy);
+            this.Name = "obsługaKameryUSB";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrazekLewy)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -179,6 +173,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox obrazekLewy;
     }
 }
 

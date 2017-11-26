@@ -13,195 +13,204 @@ using WIA;
 
 namespace Scanner
 {
-    public partial class Form1 : Form
+
+    //aberacja sferyczna
+    //synchrnizacja klatek
+
+    public partial class obs³ugaKameryUSB : Form
     {
-        WIA.CommonDialog Dialog1 = new WIA.CommonDialog();
-        static WIA.Device Scanner;
- 
-        Byte[] imageBytes;
-        
-        private const string wiaFormatBMP = "{B96B3CAB-0728-11D3-9D7B-0000F81EF32E}";
-        private const string wiaFormatJPEG = "{B96B3CAE-0728-11D3-9D7B-0000F81EF32E}";
-
-
-        public Form1()
+        static Byte[] imageBytes;
+        public obs³ugaKameryUSB()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            radioButton1.Select();
-        }
-
-
-
-
-        private void button2_Click(object sender, EventArgs e)
+        public class WIAScanner
         {
 
-            if (pictureBox1.Image != null)
+            const string wiaFormatBMP = "{B96B3CAB-0728-11D3-9D7B-0000F81EF32E}";
+            class WIA_DPS_DOCUMENT_HANDLING_SELECT
             {
-
-
-                FileStream file = File.OpenWrite("d.bmp");
-                file.Write(imageBytes, 0, imageBytes.Length);
-                file.Close();
-                MessageBox.Show("zapisano");
+                public const uint FEEDER = 0x00000000;
+                public const uint FLATBED = 0x00000000;
             }
-        }
-
-        private bool chooseDevice()
-        {
-            try
+            class WIA_DPS_DOCUMENT_HANDLING_STATUS
             {
-                Scanner = Dialog1.ShowSelectDevice(WIA.WiaDeviceType.ScannerDeviceType, true, true);
-                if (Scanner != null) return true;
+                public const uint FEED_READY = 0x00000000;
             }
-            catch (Exception ex)
+            class WIA_PROPERTIES
             {
-                MessageBox.Show(" Nie wybrano skanera " + ex.Message, "Wybierz urz?dzenie",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                public const uint WIA_RESERVED_FOR_NEW_PROPS = 300;
+                public const uint WIA_DIP_FIRST = 300;
+                public const uint WIA_DPA_FIRST = WIA_DIP_FIRST + WIA_RESERVED_FOR_NEW_PROPS;
+                public const uint WIA_DPC_FIRST = WIA_DPA_FIRST + WIA_RESERVED_FOR_NEW_PROPS;
+
+                //// Scanner only device properties (DPS)
+                ////
+                public const uint WIA_DPS_FIRST = WIA_DPC_FIRST + WIA_RESERVED_FOR_NEW_PROPS;
+                public const uint WIA_DPS_DOCUMENT_HANDLING_STATUS = WIA_DPS_FIRST + 12;
+                public const uint WIA_DPS_DOCUMENT_HANDLING_SELECT = WIA_DPS_FIRST + 13;
             }
-            return false;
-        }
-
-      
-        private static void SetWIAProperty(IProperties properties, object propName, object propValue)
-        {
-            Property prop = properties.get_Item(ref propName);
-            prop.set_Value(ref propValue);
-        }
-
-
-
-        private static void AdjustScannerSettings(IItem scannnerItem, int scanResolutionDPIHorizontal,int scanResolutionDPIVertical, int scanStartLeftPixel, int scanStartTopPixel,
-                int scanWidthPixels, int scanHeightPixels, int brightnessPercents, int contrastPercents, int colorMode)
-        {
-            const string WIA_SCAN_COLOR_MODE = "6146";
-            const string WIA_HORIZONTAL_SCAN_RESOLUTION_DPI = "6147";
-            const string WIA_VERTICAL_SCAN_RESOLUTION_DPI = "6148";
-            const string WIA_HORIZONTAL_SCAN_START_PIXEL = "6149";
-            const string WIA_VERTICAL_SCAN_START_PIXEL = "6150";
-            const string WIA_HORIZONTAL_SCAN_SIZE_PIXELS = "6151";
-            const string WIA_VERTICAL_SCAN_SIZE_PIXELS = "6152";
-            const string WIA_SCAN_BRIGHTNESS_PERCENTS = "6154";
-            const string WIA_SCAN_CONTRAST_PERCENTS = "6155";
-            
-
-
-            SetWIAProperty(scannnerItem.Properties, WIA_HORIZONTAL_SCAN_RESOLUTION_DPI, scanResolutionDPIHorizontal);
-            SetWIAProperty(scannnerItem.Properties, WIA_VERTICAL_SCAN_RESOLUTION_DPI, scanResolutionDPIVertical);
-            SetWIAProperty(scannnerItem.Properties, WIA_HORIZONTAL_SCAN_START_PIXEL, scanStartLeftPixel);
-            SetWIAProperty(scannnerItem.Properties, WIA_VERTICAL_SCAN_START_PIXEL, scanStartTopPixel);
-            SetWIAProperty(scannnerItem.Properties, WIA_HORIZONTAL_SCAN_SIZE_PIXELS, scanWidthPixels);
-            SetWIAProperty(scannnerItem.Properties, WIA_VERTICAL_SCAN_SIZE_PIXELS, scanHeightPixels);
-            SetWIAProperty(scannnerItem.Properties, WIA_SCAN_BRIGHTNESS_PERCENTS, brightnessPercents);
-            SetWIAProperty(scannnerItem.Properties, WIA_SCAN_CONTRAST_PERCENTS, contrastPercents);
-            SetWIAProperty(scannnerItem.Properties, WIA_SCAN_COLOR_MODE, colorMode);
-
-           
-            //SetWIAProperty(Scanner.Properties, 3097, WIA_PAGE_ISO_A4);
-        }
-
-        private void InitializeITEM()
-        {
-            
-            try
+            /// <summary>
+            /// Use scanner to scan an image (with user selecting the scanner from a dialog).
+            /// </summary>
+            /// <returns>Scanned images.</returns>
+            public static List<Image> Scan(PictureBox obrazek)
             {
-                WIA.Item item = Scanner.Items[1] as WIA.Item;
-
-                Int32 DPI = 300;// Convert.ToInt32(textBox1.Text);
-                Int32 contrast; //= Convert.ToInt32(textBox2.Text);
-                Int32 brightness;// = Convert.ToInt32(textBox3.Text);
-                Int32 colormode;
-
-                if (textBox1.Text != "")
-                    DPI = Convert.ToInt32(textBox1.Text);
-                else
-                    DPI = 300;
-
-                if (textBox2.Text != "")
-                    contrast = Convert.ToInt32(textBox2.Text);
-                else
-                    contrast = 0;
-
-                if (textBox3.Text != "")
-                    brightness = Convert.ToInt32(textBox3.Text);
-                else
-                    brightness = 0; 
-
-
-                if (radioButton1.Checked)
-                    colormode = 1;
-                else
-                    colormode = 2;
-
-                Console.Write(colormode);
-                AdjustScannerSettings(item, DPI,  DPI, 0, 0, 2550, 3501, brightness, contrast, colormode);
-                //item.Properties["3097"].set_Value(0);
-
-
-
-            }
-            catch
-            {
-                MessageBox.Show("Skaner nie jest gotowy lub nie obs?uguje tej funkcji.\r\n\r\n Przywrócono ustawienia domy?lne.", "Inicjalizacja",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            
-            WIA.ImageFile Img = null;
-            Scanner = null;
-            try
-            {
-                if (Scanner == null)
-                    if (chooseDevice())
-                    {
-                        InitializeITEM();//inicjuje ustawienia skanera      
-                        Img = (ImageFile)Dialog1.ShowTransfer(Scanner.Items[1], wiaFormatBMP, true);
-                        imageBytes = (byte[])Img.FileData.get_BinaryData(); // <– Converts the ImageFile to a byte array
-                        MemoryStream ms = new MemoryStream(imageBytes);
-                        Image image = Image.FromStream(ms);
-                        pictureBox1.Image = image;
-                    }
-                    else
-                    {
-                        InitializeITEM();//inicjuje ustawienia skanera      
-                        Img = (ImageFile)Dialog1.ShowTransfer(Scanner.Items[1], wiaFormatBMP, true);
-                        imageBytes = (byte[])Img.FileData.get_BinaryData(); // <– Converts the ImageFile to a byte array
-                        MemoryStream ms = new MemoryStream(imageBytes);
-                        Image image = Image.FromStream(ms);
-
-                        Image image2 = (Image)new Bitmap(image, new Size(1366, 768));                        
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox1.Image = image2;
-                        return;
-                    }
+                WIA.CommonDialog dialog = new WIA.CommonDialog();
+                WIA.Device device = dialog.ShowSelectDevice
+                    (WIA.WiaDeviceType.UnspecifiedDeviceType, true, false);
+                if (device != null)
+                {
+                    return Scan(device.DeviceID, obrazek);
+                }
                 else
                 {
-                    InitializeITEM();
-                    Img = (ImageFile)Dialog1.ShowTransfer(Scanner.Items[1], wiaFormatBMP, true);
-
+                    throw new Exception("You must select a device for scanning.");
                 }
             }
-            catch (Exception ex)
+            /// <summary>
+            /// Use scanner to scan an image (scanner is selected by its unique id).
+            /// </summary>
+            /// <param name="scannerName"></param>
+            /// <returns>Scanned images.</returns>
+            static WIA.ImageFile image;
+            public static List<Image> Scan(string scannerId, PictureBox obraz)
             {
-                MessageBox.Show(ex.Message, "Skanuj...",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                List<Image> images = new List<Image>();
+                bool hasMorePages = true;
+                while (hasMorePages)
+                {
+                    // select the correct scanner using the provided scannerId parameter
+                    WIA.DeviceManager manager = new WIA.DeviceManager();
+                    WIA.Device device = null;
+                    foreach (WIA.DeviceInfo info in manager.DeviceInfos)
+                    {
+                        if (info.DeviceID == scannerId)
+                        {
+                            // connect to scanner
+                            device = info.Connect();
+                            break;
+                        }
+                    }
+                    // device was not found
+                    if (device == null)
+                    {
+                        // enumerate available devices
+                        string availableDevices = "";
+                        foreach (WIA.DeviceInfo info in manager.DeviceInfos)
+                        {
+                            availableDevices += info.DeviceID + "\n";
+                        }
+                        // show error with available devices
+                        throw new Exception("The device with provided ID could not be found. Available Devices:\n" + availableDevices);
+                    }
+                    WIA.Item item = device.Items[1] as WIA.Item;
+                    try
+                    {
+                        // scan image
+                        WIA.ICommonDialog wiaCommonDialog = new WIA.CommonDialog();
+                        image = (WIA.ImageFile)wiaCommonDialog.ShowTransfer(item, wiaFormatBMP, false);
+                        // save to temp file
+
+
+                        //  obraz.Image = img;
+                        string fileName = "ala";
+                        File.Delete(fileName);
+                        image.SaveFile(fileName);
+
+                        //image = null;
+                        // add file to output list
+                        images.Add(Image.FromFile(fileName));
+
+                    }
+                    catch (Exception exc)
+                    {
+                        throw exc;
+                    }
+                    finally
+                    {
+                        item = null;
+                        //determine if there are any more pages waiting
+                        WIA.Property documentHandlingSelect = null;
+                        WIA.Property documentHandlingStatus = null;
+                        foreach (WIA.Property prop in device.Properties)
+                        {
+                            if (prop.PropertyID == WIA_PROPERTIES.WIA_DPS_DOCUMENT_HANDLING_SELECT)
+                                documentHandlingSelect = prop;
+                            if (prop.PropertyID == WIA_PROPERTIES.WIA_DPS_DOCUMENT_HANDLING_STATUS)
+                                documentHandlingStatus = prop;
+                        }
+                        // assume there are no more pages
+                        hasMorePages = false;
+                        // may not exist on flatbed scanner but required for feeder
+                        if (documentHandlingSelect != null)
+                        {
+                            // check for document feeder
+                            if ((Convert.ToUInt32(documentHandlingSelect.get_Value()) &
+                            WIA_DPS_DOCUMENT_HANDLING_SELECT.FEEDER) != 0)
+                            {
+                                hasMorePages = ((Convert.ToUInt32(documentHandlingStatus.get_Value()) &
+                                WIA_DPS_DOCUMENT_HANDLING_STATUS.FEED_READY) != 0);
+                            }
+                        }
+                        imageBytes = (byte[])image.FileData.get_BinaryData(); // <– Converts the ImageFile to a byte array
+                        MemoryStream ms = new MemoryStream(imageBytes);
+                        Image img = Image.FromStream(ms);
+                        obraz.Image = img;
+                        image = null;
+                    }
+                }
+
+                return images;
             }
-            finally
+            /// <summary>
+            /// Gets the list of available WIA devices.
+            /// </summary>
+            /// <returns></returns>
+            public static List<string> GetDevices()
             {
-                if (Img != null)
-                    Marshal.ReleaseComObject(Img);
+                List<string> devices = new List<string>();
+                WIA.DeviceManager manager = new WIA.DeviceManager();
+                foreach (WIA.DeviceInfo info in manager.DeviceInfos)
+                {
+                    devices.Add(info.DeviceID);
+                }
+                return devices;
             }
+        }
+
+        public static List<string> GetDevices()
+        {
+            List<string> devices = new List<string>();
+            WIA.DeviceManager manager = new WIA.DeviceManager();
+            foreach (WIA.DeviceInfo info in manager.DeviceInfos)
+            {
+                devices.Add(info.DeviceID);
+            }
+            return devices;
+        }
+        private void w³¹czGórne_Click(object sender, EventArgs e)
+        {
+            WIA.CommonDialog dialog = new WIA.CommonDialog();
+            WIA.Device device = dialog.ShowSelectDevice
+                (WIA.WiaDeviceType.UnspecifiedDeviceType, true, false);
+            if (device != null)
+            {
+                WIAScanner.Scan(device.DeviceID, obrazekLewy);
+
+            }
+            else
+            {
+                throw new Exception("You must select a device for scanning.");
+            }
+            //if (camera2.IsRunning)
+            //    camera2.Stop();
+            ////camera2 = new VideoCaptureDevice(usbCamera2[listaKamerDolna.SelectedIndex].MonikerString);
+            ////camera2.NewFrame += new NewFrameEventHandler(cam_NewFrame2);
+            //camera2.Start();
+            //writer2 = new VideoFileWriter();
+            //writer2.Open(@"C:\Users\magda\Desktop\Madzia\PWr\UP\cw12\film1.avi", 1280, 720, 30, VideoCodec.MPEG4);
         }
     }
 }
