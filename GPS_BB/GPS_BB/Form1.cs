@@ -11,9 +11,11 @@ namespace GPS_BB
         {
             InitializeComponent();
         }
-        SerialPort port = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
+        SerialPort port = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
         private string data = "";
-
+        string receivedData;
+        delegate void A();
+        A delegat;
         private void button1_Click(object sender, EventArgs e)
         {
             port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedEventHandler);
@@ -24,11 +26,18 @@ namespace GPS_BB
             else
                 MessageBox.Show("Błąd otwierania portu");
         }
-
+        private void DataRecievedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            textBoxReceivedFiles.Invoke(delegat);
+        }
+        private void WpiszOdebrane()
+        {
+            textBoxReceivedFiles.Text += port.ReadByte().ToString("X") + " ";
+        }
         public void DataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
         {
             if (InvokeRequired)
-                Invoke(DataReceivedEventHandler(sender,e), sender, e);
+                ; // Invoke(DataReceivedEventHandler(sender,e), sender, e);
             else
             {
                 var senderPort = (SerialPort)sender;
@@ -74,7 +83,15 @@ namespace GPS_BB
                 webBrowser1.Navigate(link);
                 textBox1.Text = link;
             }
+            port.DataReceived += new SerialDataReceivedEventHandler(DataRecievedHandler);
+            delegat = new A(WpiszOdebrane);
         }
 
+        private void textBoxReceivedFiles_TextChanged(object sender, EventArgs e)
+        {
+            textBoxReceivedFiles.SelectionStart = textBoxReceivedFiles.Text.Length;
+            textBoxReceivedFiles.ScrollToCaret();
+        }
     }
-}
+    }
+

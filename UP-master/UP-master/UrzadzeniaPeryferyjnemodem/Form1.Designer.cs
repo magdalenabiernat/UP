@@ -53,6 +53,7 @@
             this.textBoxInformation.Name = "textBoxInformation";
             this.textBoxInformation.Size = new System.Drawing.Size(271, 397);
             this.textBoxInformation.TabIndex = 1;
+            this.textBoxInformation.TextChanged += new System.EventHandler(this.textBoxInformation_TextChanged);
             // 
             // PeripheralLabel
             // 

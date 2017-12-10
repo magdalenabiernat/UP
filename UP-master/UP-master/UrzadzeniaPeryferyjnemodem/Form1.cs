@@ -151,5 +151,10 @@ namespace UrzadzeniaPeryferyjnemodem
         {
 
         }
+
+        private void textBoxInformation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -43,3 +43,11 @@ C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UP-master\UP-master\UrzadzeniaPeryfery
 C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Form1.resources
 C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
 C:\Users\magda\Desktop\Madzia\PWr\UP\repo\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe.config
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\bin\Debug\UrzadzeniaPeryferyjnemodem.pdb
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.FormUP_Modem.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.Properties.Resources.resources
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.csproj.GenerateResource.Cache
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.exe
+C:\Users\m-mic\Documents\Visual Studio 2017\Projects\UPlab\UP-master\UP-master\UrzadzeniaPeryferyjnemodem\obj\Debug\UrzadzeniaPeryferyjnemodem.pdb

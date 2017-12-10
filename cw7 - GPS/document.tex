@@ -1,10 +1,10 @@
-% !TEX encoding = UTF-8 Unicode
-\documentclass{article}
-
-\usepackage{polski}
+\documentclass[12pt]{article}
+\usepackage[pdftex]{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{subfig}
-\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
 
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=3.5cm, headsep=1.2cm]{geometry}
 
@@ -55,5 +55,106 @@ Dla jednoczesnego odbioru sygnału z kilku satelitów lub sygnału o dwóch czę
 \subsection{Protokół NMEA}
 NMEA 0183 (krótko nazywany również NMEA) – opublikowany przez National Marine Electronics Association protokół komunikacji między morskimi urządzeniami elektronicznymi. Ma on powszechne zastosowanie w elektronice nawigacji morskiej oraz urządzeniach GPS
 Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza sekwencja zawiera do 82 znaków. Znakiem zaczynającym dane w protokole jest „\$”, dalej następuje identyfikator zdania i pola danych oddzielone przecinkami, a na końcu znajdują się symbole <CR><LF> (carriage return, line feed).
+\section{Kod zródłowy}
 
+\begin{verbatim}
+	using System;
+	using System.Windows.Forms;
+	using System.IO.Ports;
+	
+	namespace GPS_BB
+	{
+		
+		public partial class Form1 : Form
+		{
+			public Form1()
+			{
+				InitializeComponent();
+			}
+			SerialPort port = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+			private string data = "";
+			string receivedData;
+			delegate void A();
+			A delegat;
+			private void button1_Click(object sender, EventArgs e)
+			{
+				port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedEventHandler);
+				port.Open();
+				if (port.IsOpen)
+				MessageBox.Show("Port otwarty");
+				
+				else
+				MessageBox.Show("Błąd otwierania portu");
+			}
+			private void DataRecievedHandler(object sender, SerialDataReceivedEventArgs e)
+			{
+				textBoxReceivedFiles.Invoke(delegat);
+			}
+			private void WpiszOdebrane()
+			{
+				textBoxReceivedFiles.Text += port.ReadByte().ToString("X") + " ";
+			}
+			public void DataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
+			{
+				if (InvokeRequired)
+				; // Invoke(DataReceivedEventHandler(sender,e), sender, e);
+				else
+				{
+					var senderPort = (SerialPort)sender;
+					data += senderPort.ReadExisting();
+					textBox1.Text = data;
+				}
+			}
+			
+			private void button2_Click(object sender, EventArgs e)
+			{
+				port.Close();
+				var ns = 0.0;
+				var we = 0.0;
+				string[] tempStr = null;
+				bool gpsSignal = false;
+				foreach (var line in textBoxReceivedFiles.Lines)
+				{
+					if (line.Contains("GPGGA"))
+					{
+						tempStr = line.Split(',');
+						if (tempStr[2] != "")
+						{
+							gpsSignal = true;
+							ns = Convert.ToDouble(tempStr[2]) / 100;
+							we = Convert.ToDouble(tempStr[4]) / 100;
+							
+						}
+						
+					}
+					
+				}
+				if (!gpsSignal)
+				{
+				//	MessageBox.Show("Błąd");
+				}
+				else
+				{
+					if (tempStr[3] == "S")
+					ns *= -1;
+					if (tempStr[5] == "W")
+					we *= -1;
+					var link = $"https://www.google.pl/maps/@{ns},{we},14z";
+					webBrowser1.Navigate(link);
+					textBoxReceivedFiles.Text = link;
+				}
+				port.DataReceived += new SerialDataReceivedEventHandler(DataRecievedHandler);
+				delegat = new A(WpiszOdebrane);
+			}
+			
+			private void textBoxReceivedFiles_TextChanged(object sender, EventArgs e)
+			{
+				textBoxReceivedFiles.SelectionStart = textBoxReceivedFiles.Text.Length;
+				textBoxReceivedFiles.ScrollToCaret();
+			}
+		}
+	}
+	
+	
+\end{verbatim}
 \end{document}
