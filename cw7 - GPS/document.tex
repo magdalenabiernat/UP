@@ -1,0 +1,59 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=3.5cm, headsep=1.2cm]{geometry}
+
+\linespread{1.3}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		{\scshape\LARGE Politechnika Wrocławska \par}
+		{\scshape\Large Katedra Informatyki Technicznej\par}
+		
+		\vspace{1.5cm}
+		{\scshape\Large Urządzenia Peryferyjne \par}
+		\vspace{1.5cm}
+		{\scshape\Huge GPS}
+		\vspace{1.5cm}
+	
+		\vspace{2cm}
+		{\Large\itshape Magdalena Biernat\par}
+		{\Large\itshape Michał Bojzan \par}
+		\vfill\flushleft\large
+	
+		
+		\normalsize	\centering	\vspace{3cm}
+		Prowadzący\par
+		dr inż. Jan Nikodem 
+
+		\vfill
+		{\large \today\par}
+	\end{titlepage}
+
+	\newpage
+\section{Wstęp}
+\subsection{Co to jest GPS?}
+Global Positioning System (GPS) – właściwie GPS–NAVSTAR (ang. Global Positioning System – Navigation Signal Timing and Ranging) – system nawigacji satelitarnej, stworzony przez Departament Obrony Stanów Zjednoczonych, obejmujący swoim zasięgiem całą kulę ziemską. System składa się z trzech segmentów: segmentu kosmicznego – 31 satelitów orbitujących wokół Ziemi na średniej orbicie okołoziemskiej; segmentu naziemnego – stacji kontrolnych i monitorujących na Ziemi oraz segmentu użytkownika – odbiorników sygnału. Zadaniem systemu jest dostarczenie użytkownikowi informacji o jego położeniu oraz ułatwienie nawigacji po terenie.
+\subsection{Sposób działania GPSa}
+Działanie polega na pomiarze czasu dotarcia sygnału radiowego z satelitów do odbiornika. Znając prędkość fali elektromagnetycznej oraz znając dokładny czas wysłania danego sygnału można obliczyć odległość odbiornika od satelitów. Sygnał GPS zawiera w sobie informację o układzie satelitów na niebie (tzw. almanach) oraz informację o ich teoretycznej drodze oraz odchyleń od niej (tzw. efemeryda). Odbiornik GPS w pierwszej fazie aktualizuje te informacje w swojej pamięci oraz wykorzystuje w dalszej części do ustalenia swojej odległości od poszczególnych satelitów, dla których odbiornik jest w zasięgu. Wykonując przestrzenne liniowe wcięcie wstecz mikroprocesor odbiornika może obliczyć pozycję geograficzną (długość, szerokość geograficzną oraz wysokość elipsoidalną) i następnie podać ją w wybranym układzie odniesienia – standardowo jest to WGS 84, a także aktualny czas GPS z bardzo dużą dokładnością.
+Sygnał dociera do użytkownika na dwóch częstotliwościach nośnych L1 = 1575,42 MHz (długość fali 19,029 cm) i L2 = 1227,6 MHz (długość fali 24,421 cm). Porównanie różnicy faz obu sygnałów pozwala na dokładne wyznaczenie czasu propagacji, który ulega nieznacznym wahaniom w wyniku zmiennego wpływu jonosfery, jednak nie w stopniu uniemożliwiającym określenie współrzędnych. Użytkownicy cywilni przybliżoną poprawkę jonosferyczną otrzymują w depeszy nawigacyjnej lub dzięki systemowi DGPS.
+Identyfikacja satelitów oparta jest na metodzie podziału kodu CDMA (Code Division Multiple Access). Oznacza to, że wszystkie satelity emitują na tych samych częstotliwościach, ale sygnały są modulowane różnymi kodami.
+Odbiór sygnału bez zastosowania anten parabolicznych, które w tym przypadku są bezużyteczne ze względu na ich kierunkowość, wymaga zaawansowanych technik oddzielania sygnału od szumu i przetwarzania sygnału. Satelity są w ciągłym ruchu; wyznaczenie pozycji odbiornika na podstawie pomiaru tzw. pseudoodległości od kilku satelitów jest również złożonym zadaniem, wymagającym m.in. uwzględnienia spowolnienia upływu czasu wynikającego ze zjawiska dylatacji czasu.
+\subsection{Rodzaje odbiorników}
+Dla jednoczesnego odbioru sygnału z kilku satelitów lub sygnału o dwóch częstotliwościach z jednego satelity, stosuje się odbiorniki dwóch rodzajów:
+\begin{itemize}
+\item multi-channel (wielokanałowy) – odbiorniki te składają się z określonej liczby niezależnych kanałów i każdy z nich jest przystosowany do odbierania i przetwarzania sygnałów z jednego satelity. Procesy odbioru i przetwarzania sygnałów są prowadzone w takim wielokanałowym odbiorniku jednocześnie. Obserwacje mogą być wykonywane z częstotliwością sekundową.
+\item multi plexing – odbiorniki te składają się z jednego lub wielu kanałów, z których każdy może odbierać poszczególne sygnały z satelitów. Obserwacje wykonywane są z częstotliwością milisekundową. Najlepszą jakość sygnału mają odbiorniki typu multi-channel correlation type. Odbiorniki squaring type kwadratują zarówno sygnały, jak i szumy.
+\end{itemize}
+\subsection{Protokół NMEA}
+NMEA 0183 (krótko nazywany również NMEA) – opublikowany przez National Marine Electronics Association protokół komunikacji między morskimi urządzeniami elektronicznymi. Ma on powszechne zastosowanie w elektronice nawigacji morskiej oraz urządzeniach GPS
+Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza sekwencja zawiera do 82 znaków. Znakiem zaczynającym dane w protokole jest „\$”, dalej następuje identyfikator zdania i pola danych oddzielone przecinkami, a na końcu znajdują się symbole <CR><LF> (carriage return, line feed).
+
+\end{document}
