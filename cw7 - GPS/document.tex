@@ -71,6 +71,7 @@ Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza 
 			{
 				InitializeComponent();
 			}
+						//utworzenie portu
 			SerialPort port = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
 			private string data = "";
 			string receivedData;
@@ -78,6 +79,7 @@ Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza 
 			A delegat;
 			private void button1_Click(object sender, EventArgs e)
 			{
+						//otwarcie portu
 				port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedEventHandler);
 				port.Open();
 				if (port.IsOpen)
@@ -90,10 +92,12 @@ Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza 
 			{
 				textBoxReceivedFiles.Invoke(delegat);
 			}
+			
 			private void WpiszOdebrane()
 			{
 				textBoxReceivedFiles.Text += port.ReadByte().ToString("X") + " ";
 			}
+			
 			public void DataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
 			{
 				if (InvokeRequired)
@@ -108,6 +112,7 @@ Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza 
 			
 			private void button2_Click(object sender, EventArgs e)
 			{
+					//zamykanie portu oraz zczytanie danych z GPSa
 				port.Close();
 				var ns = 0.0;
 				var we = 0.0;
@@ -135,6 +140,7 @@ Dane są transmitowane w postaci „zdań” zapisanych kodem ASCII. Pojedyncza 
 				}
 				else
 				{
+				//pobranie współrzędnych oraz wyświtlenie pozycji
 					if (tempStr[3] == "S")
 					ns *= -1;
 					if (tempStr[5] == "W")
