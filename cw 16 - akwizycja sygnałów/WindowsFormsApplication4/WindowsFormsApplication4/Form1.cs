@@ -31,7 +31,7 @@ namespace WindowsFormsApplication4
         private void bufferedAiCtrl1_DataReady(object sender, BfdAiEventArgs e)
         {
             bufferedAiCtrl1.GetData(e.Count, m_dataScaled);
-            System.IO.FileStream fs = new FileStream(Directory.GetCurrentDirectory().ToString() + "dane.txt",
+            System.IO.FileStream fs = new FileStream(Directory.GetCurrentDirectory().ToString() + "dane1000m.txt",
                 FileMode.OpenOrCreate, FileAccess.ReadWrite);
             this.Invoke((UpdateUIDelegate)delegate ()
             {

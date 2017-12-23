@@ -43,16 +43,16 @@
             // listBoxData
             // 
             this.listBoxData.FormattingEnabled = true;
-            this.listBoxData.Location = new System.Drawing.Point(86, 12);
+            this.listBoxData.Location = new System.Drawing.Point(12, 56);
             this.listBoxData.Name = "listBoxData";
-            this.listBoxData.Size = new System.Drawing.Size(120, 95);
+            this.listBoxData.Size = new System.Drawing.Size(260, 186);
             this.listBoxData.TabIndex = 0;
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(103, 113);
+            this.buttonStart.Location = new System.Drawing.Point(12, 12);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.Size = new System.Drawing.Size(260, 23);
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
