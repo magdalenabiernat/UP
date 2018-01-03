@@ -4,7 +4,7 @@
 %       Lukasz Zatorski 226172
 %-------------------------------------------------------------------
 
-fileID = fopen('C:\Users\magda\Downloads','r');
+fileID = fopen('C:\Users\m-mic\Desktop\Debugdane','r');
 formatSpec = '%f';
 A = fscanf(fileID,formatSpec);
 fclose(fileID);
