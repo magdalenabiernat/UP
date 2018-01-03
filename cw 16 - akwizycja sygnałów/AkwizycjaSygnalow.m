@@ -1,12 +1,13 @@
-clear;
+clear all;
 %open the fire!
 % file = fopen('Debugdane.txt');
 % i = 1;
 % counter = 0;
 % t = 1:1:318;
-fid = fopen('Debugdane100.txt','r');
-data = fscanf(fid,'%f');
-fclose(fid);
+%fid = fopen('Debugdane100.txt','r');
+%data = fscanf(fid,'%f');
+%fclose(fid);
+data = textread('Debugdane100.txt','%f', 1, 2045,0);
 subplot(2,2,1);
 plot(data(1:2:end),data(2:2:end));
 % if file > 0

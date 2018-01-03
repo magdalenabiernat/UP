@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage[pdftex]{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=3.5cm, headsep=1.2cm]{geometry}
+
+\linespread{1.3}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		{\scshape\LARGE Politechnika Wrocławska \par}
+		{\scshape\Large Katedra Informatyki Technicznej\par}
+		
+		\vspace{1.5cm}
+		{\scshape\Large Urządzenia Peryferyjne \par}
+		\vspace{1.5cm}
+		{\scshape\Huge Rejestracja sygnałów (Advantech DAQ)}
+		\vspace{1.5cm}
+	
+		\vspace{2cm}
+		{\Large\itshape Magdalena Biernat\par}
+		{\Large\itshape Michał Bojzan \par}
+		\vfill\flushleft\large
+	
+		
+		\normalsize	\centering	\vspace{3cm}
+		Prowadzący\par
+		dr inż. Jan Nikodem 
+
+		\vfill
+		{\large \today\par}
+	\end{titlepage}
+
+	\newpage
+\section{Wstęp}
+\subsection{Próbkowanie}
+Próbkowanie (dyskretyzacja, kwantowanie w czasie) – proces tworzenia sygnału dyskretnego, reprezentującego sygnał ciągły za pomocą ciągu wartości nazywanych próbkami. Zwykle jest jednym z etapów przetwarzania sygnału analogowego na sygnał cyfrowy.
+\subsection{Kwantyzacja}
+Kwantyzacja to nieodwracalne nieliniowe odwzorowanie statyczne zmniejszające dokładność danych przez ograniczenie ich zbioru wartości. Zbiór wartości wejściowych dzielony jest na rozłączne przedziały. Każda wartość wejściowa wypadająca w określonym przedziale jest w wyniku kwantyzacji odwzorowana na jedną wartość wyjściową przypisaną temu przedziałowi, czyli tak zwany poziom reprezentacji. W rozumieniu potocznym proces kwantyzacji można przyrównać do "zaokrąglania" wartości do określonej skali.
+\subsection{Antyaliasing}
+Antyaliasing (ang. anti-aliasing) – zespół technik służących zmniejszeniu liczby błędów zniekształceniowych aliasing lub schodkowania obrazu, powstających przy reprezentacji obrazu lub sygnału o wysokiej rozdzielczości w rozdzielczości mniejszej.\par
+\subsection{Przetwornik analogowo-cyfrowy}
+Przetwornik analogowo-cyfrowy A/C (ang. A/D – analog to digital; ADC – analog to digital converter), to układ służący do zamiany sygnału analogowego na sygnał cyfrowy. Dzięki temu możliwe jest przetwarzanie ich w urządzeniach elektronicznych opartych o architekturę zero-jedynkową oraz gromadzenie na dostosowanych do tej architektury nośnikach danych. Proces ten polega na uproszczeniu sygnału analogowego do postaci skwantowanej (dyskretnej), czyli zastąpieniu wartości zmieniających się płynnie do wartości zmieniających się skokowo w odpowiedniej skali (dokładności) odwzorowania. Przetwarzanie A/C tworzą 3 etapy: próbkowanie, kwantyzacja i kodowanie. Działanie przeciwne do wyżej wymienionego wykonuje przetwornik cyfrowo-analogowy C/A.\par
+\section{Kod zródłowy}
+\section{Skrypt z matlaba}
+\begin{verbatim}
+	fileID = fopen('C:\Users\lab\Desktop\zs\Debugdane.txt','r');
+	formatSpec = '%f';
+	A = fscanf(fileID,formatSpec);
+	fclose(fileID);
+	%axis([0 100*32 -5 5]); %100 * 1024 - czas * probki
+	t= 0:0.001;2048;
+	figure(1);
+	plot(A);
+	ylabel('Amplituda');
+	xlabel('Czas [ms]');
+\end{verbatim}
+\end{document}
