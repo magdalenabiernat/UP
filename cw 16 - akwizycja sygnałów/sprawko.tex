@@ -48,7 +48,7 @@ Antyaliasing (ang. anti-aliasing) – zespół technik służących zmniejszeniu
 \subsection{Przetwornik analogowo-cyfrowy}
 Przetwornik analogowo-cyfrowy A/C (ang. A/D – analog to digital; ADC – analog to digital converter), to układ służący do zamiany sygnału analogowego na sygnał cyfrowy. Dzięki temu możliwe jest przetwarzanie ich w urządzeniach elektronicznych opartych o architekturę zero-jedynkową oraz gromadzenie na dostosowanych do tej architektury nośnikach danych. Proces ten polega na uproszczeniu sygnału analogowego do postaci skwantowanej (dyskretnej), czyli zastąpieniu wartości zmieniających się płynnie do wartości zmieniających się skokowo w odpowiedniej skali (dokładności) odwzorowania. Przetwarzanie A/C tworzą 3 etapy: próbkowanie, kwantyzacja i kodowanie. Działanie przeciwne do wyżej wymienionego wykonuje przetwornik cyfrowo-analogowy C/A.\par
 \section{Kod zródłowy}
-\section{Skrypt z matlaba}
+\subsection{Skrypt z matlaba}
 \begin{verbatim}
 	fileID = fopen('C:\Users\lab\Desktop\zs\Debugdane.txt','r');
 	formatSpec = '%f';
@@ -61,7 +61,7 @@ Przetwornik analogowo-cyfrowy A/C (ang. A/D – analog to digital; ADC – analo
 	ylabel('Amplituda');
 	xlabel('Czas [ms]');
 \end{verbatim}
-\section{Kod  programu}
+\subsection{Kod  programu}
 \begin{verbatim}
 using System;
 using System.Collections.Generic;
@@ -75,10 +75,8 @@ using System.Windows.Forms;
 using Automation.BDaq;
 using System.IO;
 
-namespace WindowsFormsApplication4
-{
-public partial class Form1 : Form
-{
+namespace WindowsFormsApplication4{
+public partial class Form1 : Form{
 delegate void UpdateUIDelegate();
 double[] m_dataScaled;
 public Form1()
@@ -86,15 +84,13 @@ public Form1()
 InitializeComponent();
 }
 
-private void Form1_Load(object sender, EventArgs e)
-{
+private void Form1_Load(object sender, EventArgs e){
 m_dataScaled = new double[bufferedAiCtrl1.BufferCapacity];
 bufferedAiCtrl1.Streaming = true;
 bufferedAiCtrl1.Prepare();
 }
 
-private void bufferedAiCtrl1_DataReady(object sender, BfdAiEventArgs e)
-{
+private void bufferedAiCtrl1_DataReady(object sender, BfdAiEventArgs e){
 bufferedAiCtrl1.GetData(e.Count, m_dataScaled);
 System.IO.FileStream fs = new FileStream(Directory.GetCurrentDirectory().ToString() + "dane1000m.txt",
 FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -110,27 +106,27 @@ sw.Close();
 });
 }
 
-private void buttonStart_Click(object sender, EventArgs e)
-{
+private void buttonStart_Click(object sender, EventArgs e){
 bufferedAiCtrl1.Start();
 }
 }
 }
 
+
 \end{verbatim}
-\section{wykres}
+\section{Analiza danych}
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics{wykres.PNG}
-	\caption{}
+	\includegraphics[width=10cm]{wykres.PNG}
+	\caption{Wykres wygenerowany}
 	\label{}
 \end{figure}
-Z powodu problemów z programem Octave wykres wyszedł nie prawidłowy. Z anlizy naszych danych wynika, że powinien on wyglądać podbnie do poniższego wykresu
+Z powodu problemów z programem Octave wykres wyszedł nieprawidłowy. Z anlizy naszych danych wynika, że powinien on wyglądać podobnie do poniższego wykresu
 \\
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics{prawidlowy_wykres.PNG}
-	\caption{}
+	\includegraphics[width=10cm]{prawidlowy_wykres.PNG}
+	\caption{Prawidłowy wykres}
 	\label{}
 \end{figure}
 
