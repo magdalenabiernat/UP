@@ -52,7 +52,7 @@ namespace Karta_dzwiekowa
 
                 var fileFormat = Encoding.Default.GetString(wave);
                 string format = fileFormat.Substring(8, 4);
-
+                 
 
                 int fmtID = reader.ReadInt32();
                 int fmtSize = reader.ReadInt32();
